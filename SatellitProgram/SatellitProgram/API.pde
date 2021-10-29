@@ -25,15 +25,14 @@ sat1Alt = pos1.getFloat("sataltitude");
 sat2Lon = pos2.getFloat("satlongitude");
 sat2Lat = pos2.getFloat("satlatitude");
 sat2Alt = pos2.getFloat("sataltitude");
-<<<<<<< HEAD
-=======
+
 float time2 = pos2.getFloat("timestamp");
 
 
 
 float theta1 = radians(sat1Lat);
 float phi1 = radians(sat1Lon) + PI;
->>>>>>> 43d15b03d89d7d673d93e84854da926a7ad351de
+
 
 JSONObject pos3 = positionsJson2.getJSONObject(0);
 JSONObject pos4 = positionsJson2.getJSONObject(1);
