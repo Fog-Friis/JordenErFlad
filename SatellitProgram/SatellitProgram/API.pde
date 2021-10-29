@@ -2,6 +2,8 @@ float x1,x2,x3;
 float y1,y2,y3;
 float z1,z2,z3;
 
+float sat1Lon, sat1Lat, sat2Lon, sat2Lat, sat1Alt, sat2Alt;
+
 void getPos() {
 
 
@@ -12,12 +14,14 @@ JSONArray positionsJson = j.getJSONArray("positions");
 JSONObject pos1 = positionsJson.getJSONObject(0);
 JSONObject pos2 = positionsJson.getJSONObject(1);
 
-float sat1Lon = pos1.getFloat("satlongitude");
-float sat1Lat = pos1.getFloat("satlatitude");
+sat1Lon = pos1.getFloat("satlongitude");
+sat1Lat = pos1.getFloat("satlatitude");
+sat1Alt = pos1.getFloat("sataltitude");
 float time1 = pos1.getFloat("timestamp");
 
-float sat2Lon = pos2.getFloat("satlongitude");
-float sat2Lat = pos2.getFloat("satlatitude");
+sat2Lon = pos2.getFloat("satlongitude");
+sat2Lat = pos2.getFloat("satlatitude");
+sat2Alt = pos2.getFloat("sataltitude");
 float time2 = pos2.getFloat("timestamp");
 
 
