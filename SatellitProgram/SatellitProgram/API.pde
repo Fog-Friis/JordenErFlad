@@ -25,6 +25,7 @@ sat2Alt = pos2.getFloat("sataltitude");
 float time2 = pos2.getFloat("timestamp");
 
 
+
 float theta1 = radians(sat1Lat);
 float phi1 = radians(sat1Lon) + PI;
 

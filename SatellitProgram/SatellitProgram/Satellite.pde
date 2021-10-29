@@ -33,7 +33,9 @@ class Satellite {
         endtime = frameCount;
       }      
     }
-    ellapsedtime = endtime-starttime;
+  ellapsedtime = (endtime-starttime)/60;
+  
+  
 
     pushMatrix();
     //translate(width / 2, height / 2);
