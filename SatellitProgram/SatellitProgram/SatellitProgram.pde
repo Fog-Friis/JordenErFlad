@@ -12,7 +12,7 @@ float r = 200;
 PImage earth;
 PShape globe;
 void setup() {
-    size(600, 600, P3D);
+    size(1000,1000,P3D);
   earth = loadImage("earth2.jpg");
 
   noStroke();
@@ -23,12 +23,14 @@ void setup() {
 }
 
 void draw() {
+textSize(40);
 
   background(51);
   translate(width*0.5, height*0.5);
-    satellite.display();
-  rotateY(angle);
-   angle += 0.05;
+      
+      
+//rotateY(angle);
+ //angle += 0.01;
 
   lights();
   fill(200);
@@ -49,24 +51,12 @@ void draw() {
 
 
     pushMatrix();
+
     translate(x1, y1, z1);
     rotate(angleb, raxis.x, raxis.y, raxis.z);
+    satellite.display();
     fill(255);
     popMatrix();
     
-      //midten
-  pushMatrix();
-  translate(width*0.5, height*0.5);
-  box(20);
-  popMatrix();
- rotation+=0.1;
-
-  //latt
-  pushMatrix();
-  translate(width*0.5, height*0.5);
-  rotate(rotation, yAxis.x, yAxis.y, yAxis.z);
-  rotate(rotation,zAxis.x,zAxis.y,zAxis.z);
-  translate(100, 0, 0);
-  box(40);
-  popMatrix();
+     
   }
