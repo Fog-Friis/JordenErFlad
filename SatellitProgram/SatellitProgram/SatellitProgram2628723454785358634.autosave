@@ -1,5 +1,3 @@
-Satellite satellite = new Satellite();
-
 PVector yAxis = new PVector(0, 1, 0);
 PVector zAxis = new PVector(0, 0, 1);
 
@@ -9,11 +7,13 @@ float angle;
 Table table;
 float r = 200;
 
+Satellite satellite = new Satellite();
+
 PImage earth;
 PShape globe;
 void setup() {
-    size(1000,1000,P3D);
-  earth = loadImage("earth2.jpg");
+    size(1280, 720, P3D);
+  earth = loadImage("earth3.jpg");
 
   noStroke();
   globe = createShape(SPHERE, r);
@@ -23,14 +23,12 @@ void setup() {
 }
 
 void draw() {
-textSize(40);
 
-  background(51);
+  background(51);  
   translate(width*0.5, height*0.5);
-      
-      
-//rotateY(angle);
- //angle += 0.01;
+    satellite.display();
+  rotateY(angle);
+  angle += 0.05;
 
   lights();
   fill(200);
@@ -51,12 +49,24 @@ textSize(40);
 
 
     pushMatrix();
-
     translate(x1, y1, z1);
     rotate(angleb, raxis.x, raxis.y, raxis.z);
-    satellite.display();
     fill(255);
     popMatrix();
     
-     
+      //midten
+  pushMatrix();
+  translate(width*0.5, height*0.5);
+  box(20);
+  popMatrix();
+ rotation+=0.1;
+
+  //latt
+  pushMatrix();
+  translate(width*0.5, height*0.5);
+  rotate(rotation, yAxis.x, yAxis.y, yAxis.z);
+  rotate(rotation,zAxis.x,zAxis.y,zAxis.z);
+  translate(100, 0, 0);
+  box(200);
+  popMatrix();
   }
