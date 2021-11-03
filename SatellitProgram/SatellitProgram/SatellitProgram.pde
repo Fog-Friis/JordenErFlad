@@ -1,4 +1,5 @@
 Satellite ISS;
+Satellite KMS;
 
 PVector yAxis = new PVector(0, 1, 0);
 PVector zAxis = new PVector(0, 0, 1);
@@ -13,7 +14,7 @@ PImage earth;
 PShape globe;
 void setup() {
   size(1000, 1000, P3D);
-  earth = loadImage("earth3.jpg");
+  earth = loadImage("earth2.jpg");
 
   noStroke();
   globe = createShape(SPHERE, r);
@@ -21,8 +22,8 @@ void setup() {
   getPos();
   ISS = new Satellite(sat1Lat, sat2Lat, sat1Lon, sat2Lon, sat1Alt);
   ISS.satsetup();
-  //SES = new Satellite(sat3Lat, sat4Lat, sat3Lon, sat4Lon, sat3Alt);
-  //SES.satsetup();
+  KMS = new Satellite(sat3Lat, sat4Lat, sat3Lon, sat4Lon, sat3Alt);
+  KMS.satsetup();
 }
 
 void draw() {
@@ -31,12 +32,11 @@ void draw() {
   background(51);
   translate(width*0.5, height*0.5);
 
-
   rotateY(angle);
 
-  if (keyPressed && key == 'd') {
+  if (keyPressed && key == 'a') {
     angle += 0.01;
-  } else if(keyPressed && key== 'a'){
+  } else if(keyPressed && key== 'd'){
     angle -= 0.01;
   }
 
@@ -47,22 +47,28 @@ void draw() {
   shape(globe);
 
 
-  PVector pos = new PVector(x1, y1, z1);
+  //PVector pos1 = new PVector(x1, y1, z1);
+  //PVector pos2 = new PVector(x2, y2, z2);
 
   float h = pow(10, 10);
   float maxh = pow(10, 7);
   h = map(h, 0, maxh, 10, 100);
-  PVector xaxis = new PVector(1, 0, 0);
-  float angleb = PVector.angleBetween(xaxis, pos);
-  PVector raxis = xaxis.cross(pos);
+  //PVector xaxis = new PVector(1, 0, 0);
+  //float angleb1 = PVector.angleBetween(xaxis, pos1);
+  //println(angleb1);
+  //PVector raxis1 = xaxis.cross(pos1);
+  //float angleb2 = PVector.angleBetween(xaxis, pos2);
+  //PVector raxis2 = xaxis.cross(pos2);
   
   //println(SES.radius);
   
   pushMatrix();
-  translate(x1, y1, z1);
-  rotate(angleb, raxis.x, raxis.y, raxis.z);
+  //translate(x1, y1, z1);
+  //rotate(angleb1);
   ISS.display();
-  //SES.display();
-  fill(255);
+  popMatrix();
+  
+  pushMatrix();
+  KMS.display();
   popMatrix();
 }

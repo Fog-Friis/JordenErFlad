@@ -7,10 +7,10 @@ float sat3Lon, sat3Lat, sat4Lon, sat4Lat, sat3Alt, sat4Alt;
 void getPos() {
 
 
-JSONObject j = loadJSONObject("https://api.n2yo.com/rest/v1/satellite/positions/25544/41.702/-76.014/0/2/&apiKey=YR2MY4-4WQVXA-LK9M53-4SPI");
+JSONObject j = loadJSONObject("https://api.n2yo.com/rest/v1/satellite/positions/25544/41.702/-76.014/0/2/&apiKey=25UHXC-YKPXZ4-D6YJQW-4SSW");
 JSONArray positionsJson = j.getJSONArray("positions");
 
-JSONObject j2= loadJSONObject("https://api.n2yo.com/rest/v1/satellite/positions/33591/41.702/-76.014/0/2/&apiKey=YR2MY4-4WQVXA-LK9M53-4SPI  ");
+JSONObject j2= loadJSONObject("https://api.n2yo.com/rest/v1/satellite/positions/41332/41.702/-76.014/0/2/&apiKey=25UHXC-YKPXZ4-D6YJQW-4SSW");
 JSONArray positionsJson2 = j2.getJSONArray("positions");
  
 

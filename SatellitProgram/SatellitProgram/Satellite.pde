@@ -1,8 +1,7 @@
 class Satellite {
   
   float lat1, lat2, long1, long2, alt;
-  float radius, theta, phi;
-  float radius2, theta2, phi2; 
+  float theta, theta2, phi, phi2, radius; 
   
   Satellite(float lat1, float lat2, float long1, float long2, float alt){
     this.lat1 = lat1;
