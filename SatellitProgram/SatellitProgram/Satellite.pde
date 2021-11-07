@@ -16,7 +16,7 @@ class Satellite {
 
 
   void satsetup() {
-    radius = alt/2;
+    radius = alt/1.5;
     
     theta = radians(lat1);
     phi = radians(long1)+PI;

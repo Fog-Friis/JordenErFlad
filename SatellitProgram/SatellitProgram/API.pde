@@ -4,6 +4,7 @@ float z1,z2,z3;
 
 float sat1Lon, sat1Lat, sat2Lon, sat2Lat, sat1Alt, sat2Alt;
 float sat3Lon, sat3Lat, sat4Lon, sat4Lat, sat3Alt, sat4Alt;
+int timeStamp;
 void getPos() {
 
 
@@ -25,6 +26,7 @@ sat1Alt = pos1.getFloat("sataltitude");
 sat2Lon = pos2.getFloat("satlongitude");
 sat2Lat = pos2.getFloat("satlatitude");
 sat2Alt = pos2.getFloat("sataltitude");
+timeStamp = pos2.getInt("timestamp");
 
 JSONObject pos3 = positionsJson2.getJSONObject(0);
 JSONObject pos4 = positionsJson2.getJSONObject(1);
@@ -37,6 +39,5 @@ sat3Alt = pos3.getFloat("sataltitude");
 sat4Lon = pos4.getFloat("satlongitude");
 sat4Lat = pos4.getFloat("satlatitude");
 sat4Alt = pos4.getFloat("sataltitude");
-
 
 }
